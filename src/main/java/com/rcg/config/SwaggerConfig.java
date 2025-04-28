@@ -13,11 +13,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @OpenAPIDefinition(
-    info = @Info(title = "PlanIt", version = "v3"),
+    info = @Info(title = "RCG", version = "v1"),
     servers = @Server(url = "/", description = "서버 URL"),
     security = {
-        @SecurityRequirement(name = "Language_cookieAuth"),
-        @SecurityRequirement(name = "JWT_cookieAuth"),
         @SecurityRequirement(name = "bearerAuth")
     }
 )
@@ -30,19 +28,6 @@ import org.springframework.context.annotation.Configuration;
     bearerFormat = "JWT" // 베어러 형식 설정 (선택 사항)
 )
 
-@SecurityScheme(
-    name = "Language_cookieAuth", // 쿠키 인증용 스키마
-    type = SecuritySchemeType.APIKEY,
-    in = SecuritySchemeIn.COOKIE,  // 쿠키에 전달됨을 명시
-    paramName = "language"
-)
-
-@SecurityScheme(
-    name = "JWT_cookieAuth", // 쿠키 인증용 스키마
-    type = SecuritySchemeType.APIKEY,
-    in = SecuritySchemeIn.COOKIE,  // 쿠키에 전달됨을 명시
-    paramName = "jwt"
-)
 
 @RequiredArgsConstructor
 @Configuration
@@ -51,7 +36,7 @@ public class SwaggerConfig {
     @Bean
     public GroupedOpenApi SwaggerOpenApi() {
         return GroupedOpenApi.builder()
-            .group("PlanIt API v3")
+            .group("RCG API")
             .pathsToMatch("/**")
             .build();
     }

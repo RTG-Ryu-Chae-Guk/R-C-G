@@ -1,0 +1,830 @@
+{
+  "list_total_count": 1,
+  "RESULT": {
+    "RESULT.CODE": "INFO-000",
+    "RESULT.MESSAGE": "정상 처리되었습니다."
+  },
+  "CITYDATA": {
+    "AREA_NM": "노들섬",
+    "AREA_CD": "POI092",
+    "LIVE_PPLTN_STTS": [
+      {
+        "AREA_NM": "노들섬",
+        "AREA_CD": "POI092",
+        "AREA_CONGEST_LVL": "여유",
+        "AREA_CONGEST_MSG": "사람이 몰려있을 가능성이 낮고 붐빔은 거의 느껴지지 않아요. 도보 이동이 자유로워요.",
+        "AREA_PPLTN_MIN": "500",
+        "AREA_PPLTN_MAX": "600",
+        "MALE_PPLTN_RATE": "47.5",
+        "FEMALE_PPLTN_RATE": "52.5",
+        "PPLTN_RATE_0": "1.1",
+        "PPLTN_RATE_10": "3.1",
+        "PPLTN_RATE_20": "17.2",
+        "PPLTN_RATE_30": "20.6",
+        "PPLTN_RATE_40": "18.3",
+        "PPLTN_RATE_50": "16.5",
+        "PPLTN_RATE_60": "13.3",
+        "PPLTN_RATE_70": "10.0",
+        "RESNT_PPLTN_RATE": "23.7",
+        "NON_RESNT_PPLTN_RATE": "76.3",
+        "REPLACE_YN": "N",
+        "PPLTN_TIME": "2025-04-21 12:40",
+        "FCST_YN": "Y",
+        "FCST_PPLTN": [
+          {
+            "FCST_TIME": "2025-04-21 14:00",
+            "FCST_CONGEST_LVL": "여유",
+            "FCST_PPLTN_MIN": "600",
+            "FCST_PPLTN_MAX": "700"
+          },
+          {
+            "FCST_TIME": "2025-04-21 15:00",
+            "FCST_CONGEST_LVL": "여유",
+            "FCST_PPLTN_MIN": "600",
+            "FCST_PPLTN_MAX": "700"
+          },
+          {
+            "FCST_TIME": "2025-04-21 16:00",
+            "FCST_CONGEST_LVL": "여유",
+            "FCST_PPLTN_MIN": "700",
+            "FCST_PPLTN_MAX": "800"
+          },
+          {
+            "FCST_TIME": "2025-04-21 17:00",
+            "FCST_CONGEST_LVL": "여유",
+            "FCST_PPLTN_MIN": "800",
+            "FCST_PPLTN_MAX": "900"
+          },
+          {
+            "FCST_TIME": "2025-04-21 18:00",
+            "FCST_CONGEST_LVL": "여유",
+            "FCST_PPLTN_MIN": "900",
+            "FCST_PPLTN_MAX": "1000"
+          },
+          {
+            "FCST_TIME": "2025-04-21 19:00",
+            "FCST_CONGEST_LVL": "여유",
+            "FCST_PPLTN_MIN": "1000",
+            "FCST_PPLTN_MAX": "1500"
+          },
+          {
+            "FCST_TIME": "2025-04-21 20:00",
+            "FCST_CONGEST_LVL": "여유",
+            "FCST_PPLTN_MIN": "1000",
+            "FCST_PPLTN_MAX": "1500"
+          },
+          {
+            "FCST_TIME": "2025-04-21 21:00",
+            "FCST_CONGEST_LVL": "여유",
+            "FCST_PPLTN_MIN": "900",
+            "FCST_PPLTN_MAX": "1000"
+          },
+          {
+            "FCST_TIME": "2025-04-21 22:00",
+            "FCST_CONGEST_LVL": "여유",
+            "FCST_PPLTN_MIN": "800",
+            "FCST_PPLTN_MAX": "900"
+          },
+          {
+            "FCST_TIME": "2025-04-21 23:00",
+            "FCST_CONGEST_LVL": "여유",
+            "FCST_PPLTN_MIN": "600",
+            "FCST_PPLTN_MAX": "700"
+          },
+          {
+            "FCST_TIME": "2025-04-22 00:00",
+            "FCST_CONGEST_LVL": "여유",
+            "FCST_PPLTN_MIN": "500",
+            "FCST_PPLTN_MAX": "600"
+          },
+          {
+            "FCST_TIME": "2025-04-22 01:00",
+            "FCST_CONGEST_LVL": "여유",
+            "FCST_PPLTN_MIN": "400",
+            "FCST_PPLTN_MAX": "500"
+          }
+        ]
+      }
+    ],
+    "ROAD_TRAFFIC_STTS": {
+      "AVG_ROAD_DATA": {
+        "ROAD_MSG": "해당 장소로 이동·진입하는 도로가 크게 막히지 않아요.",
+        "ROAD_TRAFFIC_IDX": "원활",
+        "ROAD_TRAFFIC_SPD": 38,
+        "ROAD_TRAFFIC_TIME": "2025-04-21 13:00"
+      },
+      "ROAD_TRAFFIC_STTS": [
+        {
+          "LINK_ID": "1020004501",
+          "ROAD_NM": "양녕로",
+          "START_ND_CD": "1020041200",
+          "START_ND_NM": "용산구-동작구",
+          "START_ND_XY": "126.9574242292984394_37.5155554859166855",
+          "END_ND_CD": "1020037700",
+          "END_ND_NM": "한강대교",
+          "END_ND_XY": "126.9614504170564686_37.5219168510869849",
+          "DIST": "791.0",
+          "SPD": 54.0,
+          "IDX": "원활",
+          "XYLIST": "126.9614504170563833_37.5219168510869352|126.9589097845338159_37.5177642230110706|126.9582758680696628_37.5168127456946507|126.9578128085175734_37.5162112838858306|126.9573651634435123_37.5155821523401372"
+        },
+        {
+          "LINK_ID": "1020025800",
+          "ROAD_NM": "양녕로",
+          "START_ND_CD": "1020012100",
+          "START_ND_NM": "한강대교북측",
+          "START_ND_XY": "126.9617113604101206_37.5220964346285655",
+          "END_ND_CD": "1020041200",
+          "END_ND_NM": "용산구-동작구",
+          "END_ND_XY": "126.9574242292984394_37.5155554859166855",
+          "DIST": "820.0",
+          "SPD": 23.5,
+          "IDX": "서행",
+          "XYLIST": "126.9574832951106487_37.5155288203644872|126.9579297868750274_37.5161563301520928|126.9583938315474967_37.5167590712800560|126.9590308278204702_37.5177151666828266|126.9617113604100638_37.5220964346285157"
+        }
+      ]
+    },
+    "PRK_STTS": [
+      {
+        "PRK_NM": "노들섬 주차장",
+        "PRK_CD": "3204515",
+        "PRK_TYPE": "BS",
+        "CPCTY": "99",
+        "CUR_PRK_CNT": "",
+        "CUR_PRK_TIME": "",
+        "CUR_PRK_YN": "N",
+        "PAY_YN": "Y",
+        "RATES": "1000",
+        "TIME_RATES": "30",
+        "ADD_RATES": "300",
+        "ADD_TIME_RATES": "10",
+        "ADDRESS": "용산구 이촌동 302-146",
+        "ROAD_ADDR": "",
+        "LNG": "126.957417",
+        "LAT": "37.517689"
+      }
+    ],
+    "SUB_STTS": [],
+    "BUS_STN_STTS": [
+      {
+        "BUS_RESULT_MSG": "정상 호출되었습니다.",
+        "BUS_STN_ID": "102000247",
+        "BUS_ARS_ID": "03340",
+        "BUS_STN_NM": "노들섬",
+        "BUS_STN_X": "126.95861",
+        "BUS_STN_Y": "37.517515",
+        "BUS_DETAIL": [
+          {
+            "RTE_STN_NM": "노들섬",
+            "RTE_NM": "150",
+            "RTE_ID": "100100029",
+            "RTE_SECT": "한강대교북단~노들섬",
+            "RTE_CONGEST_1": "여유",
+            "RTE_ARRV_TM_1": "5분40초후[2번째 전]",
+            "RTE_ARRV_STN_1": "신용산역",
+            "RTE_CONGEST_2": "여유",
+            "RTE_ARRV_TM_2": "15분9초후[6번째 전]",
+            "RTE_ARRV_STN_2": "갈월동"
+          },
+          {
+            "RTE_STN_NM": "노들섬",
+            "RTE_NM": "151",
+            "RTE_ID": "100100030",
+            "RTE_SECT": "한강대교북단~노들섬",
+            "RTE_CONGEST_1": "여유",
+            "RTE_ARRV_TM_1": "곧 도착",
+            "RTE_ARRV_STN_1": "노들섬",
+            "RTE_CONGEST_2": "여유",
+            "RTE_ARRV_TM_2": "2분44초후[1번째 전]",
+            "RTE_ARRV_STN_2": "한강대교북단.LG유플러스"
+          },
+          {
+            "RTE_STN_NM": "노들섬",
+            "RTE_NM": "152",
+            "RTE_ID": "100100031",
+            "RTE_SECT": "한강대교북단~노들섬",
+            "RTE_CONGEST_1": "여유",
+            "RTE_ARRV_TM_1": "6분6초후[2번째 전]",
+            "RTE_ARRV_STN_1": "신용산역",
+            "RTE_CONGEST_2": "여유",
+            "RTE_ARRV_TM_2": "14분41초후[6번째 전]",
+            "RTE_ARRV_STN_2": "갈월동"
+          },
+          {
+            "RTE_STN_NM": "노들섬",
+            "RTE_NM": "500",
+            "RTE_ID": "100100076",
+            "RTE_SECT": "한강대교북단~노들섬",
+            "RTE_CONGEST_1": "여유",
+            "RTE_ARRV_TM_1": "2분50초후[1번째 전]",
+            "RTE_ARRV_STN_1": "한강대교북단.LG유플러스",
+            "RTE_CONGEST_2": "여유",
+            "RTE_ARRV_TM_2": "10분36초후[4번째 전]",
+            "RTE_ARRV_STN_2": "삼각지역"
+          },
+          {
+            "RTE_STN_NM": "노들섬",
+            "RTE_NM": "501",
+            "RTE_ID": "100100077",
+            "RTE_SECT": "한강대교북단~노들섬",
+            "RTE_CONGEST_1": "보통",
+            "RTE_ARRV_TM_1": "2분44초후[1번째 전]",
+            "RTE_ARRV_STN_1": "한강대교북단.LG유플러스",
+            "RTE_CONGEST_2": "여유",
+            "RTE_ARRV_TM_2": "17분23초후[7번째 전]",
+            "RTE_ARRV_STN_2": "서울역버스환승센터"
+          },
+          {
+            "RTE_STN_NM": "노들섬",
+            "RTE_NM": "504",
+            "RTE_ID": "100100079",
+            "RTE_SECT": "한강대교북단~노들섬",
+            "RTE_CONGEST_1": "여유",
+            "RTE_ARRV_TM_1": "4분38초후[1번째 전]",
+            "RTE_ARRV_STN_1": "한강대교북단.LG유플러스",
+            "RTE_CONGEST_2": "여유",
+            "RTE_ARRV_TM_2": "6분2초후[2번째 전]",
+            "RTE_ARRV_STN_2": "신용산역"
+          },
+          {
+            "RTE_STN_NM": "노들섬",
+            "RTE_NM": "506",
+            "RTE_ID": "100100081",
+            "RTE_SECT": "한강대교북단~노들섬",
+            "RTE_CONGEST_1": "여유",
+            "RTE_ARRV_TM_1": "9분18초후[4번째 전]",
+            "RTE_ARRV_STN_1": "삼각지역",
+            "RTE_CONGEST_2": "여유",
+            "RTE_ARRV_TM_2": "29분12초후[12번째 전]",
+            "RTE_ARRV_STN_2": "을지로입구역.광교"
+          },
+          {
+            "RTE_STN_NM": "노들섬",
+            "RTE_NM": "507",
+            "RTE_ID": "100100082",
+            "RTE_SECT": "한강대교북단~노들섬",
+            "RTE_CONGEST_1": "여유",
+            "RTE_ARRV_TM_1": "5분56초후[2번째 전]",
+            "RTE_ARRV_STN_1": "신용산역",
+            "RTE_CONGEST_2": "여유",
+            "RTE_ARRV_TM_2": "23분24초후[10번째 전]",
+            "RTE_ARRV_STN_2": "북창동.남대문시장"
+          },
+          {
+            "RTE_STN_NM": "노들섬",
+            "RTE_NM": "605",
+            "RTE_ID": "100100090",
+            "RTE_SECT": "한강대교북단~노들섬",
+            "RTE_CONGEST_1": "여유",
+            "RTE_ARRV_TM_1": "21분후[11번째 전]",
+            "RTE_ARRV_STN_1": "서울역11번출구",
+            "RTE_CONGEST_2": "여유",
+            "RTE_ARRV_TM_2": "27분2초후[12번째 전]",
+            "RTE_ARRV_STN_2": "숙대입구역"
+          },
+          {
+            "RTE_STN_NM": "노들섬",
+            "RTE_NM": "742",
+            "RTE_ID": "100100116",
+            "RTE_SECT": "한강대교북단~노들섬",
+            "RTE_CONGEST_1": "여유",
+            "RTE_ARRV_TM_1": "4분47초후[1번째 전]",
+            "RTE_ARRV_STN_1": "한강대교북단.LG유플러스",
+            "RTE_CONGEST_2": "여유",
+            "RTE_ARRV_TM_2": "18분30초후[7번째 전]",
+            "RTE_ARRV_STN_2": "서울역버스환승센터"
+          },
+          {
+            "RTE_STN_NM": "노들섬",
+            "RTE_NM": "750A",
+            "RTE_ID": "100100114",
+            "RTE_SECT": "한강대교북단~노들섬",
+            "RTE_CONGEST_1": "정보없음",
+            "RTE_ARRV_TM_1": "출발대기",
+            "RTE_ARRV_STN_1": null,
+            "RTE_CONGEST_2": "정보없음",
+            "RTE_ARRV_TM_2": "출발대기",
+            "RTE_ARRV_STN_2": null
+          },
+          {
+            "RTE_STN_NM": "노들섬",
+            "RTE_NM": "750B",
+            "RTE_ID": "100100565",
+            "RTE_SECT": "한강대교북단~노들섬",
+            "RTE_CONGEST_1": "여유",
+            "RTE_ARRV_TM_1": "5분1초후[1번째 전]",
+            "RTE_ARRV_STN_1": "한강대교북단.LG유플러스",
+            "RTE_CONGEST_2": "여유",
+            "RTE_ARRV_TM_2": "9분24초후[4번째 전]",
+            "RTE_ARRV_STN_2": "삼각지역"
+          },
+          {
+            "RTE_STN_NM": "노들섬",
+            "RTE_NM": "752",
+            "RTE_ID": "100100117",
+            "RTE_SECT": "한강대교북단~노들섬",
+            "RTE_CONGEST_1": "여유",
+            "RTE_ARRV_TM_1": "5분23초후[2번째 전]",
+            "RTE_ARRV_STN_1": "신용산역",
+            "RTE_CONGEST_2": "여유",
+            "RTE_ARRV_TM_2": "9분18초후[4번째 전]",
+            "RTE_ARRV_STN_2": "삼각지역"
+          },
+          {
+            "RTE_STN_NM": "노들섬",
+            "RTE_NM": "N15",
+            "RTE_ID": "100100610",
+            "RTE_SECT": "한강대교북단~노들섬",
+            "RTE_CONGEST_1": "정보없음",
+            "RTE_ARRV_TM_1": "운행종료",
+            "RTE_ARRV_STN_1": null,
+            "RTE_CONGEST_2": "정보없음",
+            "RTE_ARRV_TM_2": "운행종료",
+            "RTE_ARRV_STN_2": null
+          },
+          {
+            "RTE_STN_NM": "노들섬",
+            "RTE_NM": "6211",
+            "RTE_ID": "100100289",
+            "RTE_SECT": "한강대교전망카페~노들섬",
+            "RTE_CONGEST_1": "여유",
+            "RTE_ARRV_TM_1": "23분9초후[13번째 전]",
+            "RTE_ARRV_STN_1": "한남동하이페리온",
+            "RTE_CONGEST_2": "여유",
+            "RTE_ARRV_TM_2": "29분23초후[17번째 전]",
+            "RTE_ARRV_STN_2": "장충단로입구"
+          }
+        ]
+      },
+      {
+        "BUS_RESULT_MSG": "정상 호출되었습니다.",
+        "BUS_STN_ID": "102000248",
+        "BUS_ARS_ID": "03341",
+        "BUS_STN_NM": "노들섬",
+        "BUS_STN_X": "126.959037665",
+        "BUS_STN_Y": "37.5173638437",
+        "BUS_DETAIL": [
+          {
+            "RTE_STN_NM": "노들섬",
+            "RTE_NM": "150",
+            "RTE_ID": "100100029",
+            "RTE_SECT": "노들역~노들섬",
+            "RTE_CONGEST_1": "여유",
+            "RTE_ARRV_TM_1": "5분3초후[2번째 전]",
+            "RTE_ARRV_STN_1": "노량진역",
+            "RTE_CONGEST_2": "여유",
+            "RTE_ARRV_TM_2": "10분6초후[5번째 전]",
+            "RTE_ARRV_STN_2": "대방역"
+          },
+          {
+            "RTE_STN_NM": "노들섬",
+            "RTE_NM": "151",
+            "RTE_ID": "100100030",
+            "RTE_SECT": "흑석동효사정앞~노들섬",
+            "RTE_CONGEST_1": "여유",
+            "RTE_ARRV_TM_1": "6분33초후[1번째 전]",
+            "RTE_ARRV_STN_1": "흑석동효사정앞",
+            "RTE_CONGEST_2": "여유",
+            "RTE_ARRV_TM_2": "19분40초후[6번째 전]",
+            "RTE_ARRV_STN_2": "노들섬"
+          },
+          {
+            "RTE_STN_NM": "노들섬",
+            "RTE_NM": "152",
+            "RTE_ID": "100100031",
+            "RTE_SECT": "노들역~노들섬",
+            "RTE_CONGEST_1": "여유",
+            "RTE_ARRV_TM_1": "3분10초후[0번째 전]",
+            "RTE_ARRV_STN_1": "노들섬",
+            "RTE_CONGEST_2": "보통",
+            "RTE_ARRV_TM_2": "9분25초후[4번째 전]",
+            "RTE_ARRV_STN_2": "청화병원"
+          },
+          {
+            "RTE_STN_NM": "노들섬",
+            "RTE_NM": "500",
+            "RTE_ID": "100100076",
+            "RTE_SECT": "노들역~노들섬",
+            "RTE_CONGEST_1": "여유",
+            "RTE_ARRV_TM_1": "3분47초후[1번째 전]",
+            "RTE_ARRV_STN_1": "노들역",
+            "RTE_CONGEST_2": "여유",
+            "RTE_ARRV_TM_2": "11분14초후[5번째 전]",
+            "RTE_ARRV_STN_2": "7호선장승배기역.상도2치안센터"
+          },
+          {
+            "RTE_STN_NM": "노들섬",
+            "RTE_NM": "501",
+            "RTE_ID": "100100077",
+            "RTE_SECT": "상도터널노량진동~노들섬",
+            "RTE_CONGEST_1": "여유",
+            "RTE_ARRV_TM_1": "7분44초후[4번째 전]",
+            "RTE_ARRV_STN_1": "상도동중앙하이츠빌.상도전통시장",
+            "RTE_CONGEST_2": "여유",
+            "RTE_ARRV_TM_2": "16분20초후[9번째 전]",
+            "RTE_ARRV_STN_2": "봉천사거리.봉천중앙시장"
+          },
+          {
+            "RTE_STN_NM": "노들섬",
+            "RTE_NM": "504",
+            "RTE_ID": "100100079",
+            "RTE_SECT": "노들역~노들섬",
+            "RTE_CONGEST_1": "여유",
+            "RTE_ARRV_TM_1": "11분28초후[4번째 전]",
+            "RTE_ARRV_STN_1": "청화병원",
+            "RTE_CONGEST_2": "여유",
+            "RTE_ARRV_TM_2": "19분후[7번째 전]",
+            "RTE_ARRV_STN_2": "신대방삼거리"
+          },
+          {
+            "RTE_STN_NM": "노들섬",
+            "RTE_NM": "506",
+            "RTE_ID": "100100081",
+            "RTE_SECT": "상도터널노량진동~노들섬",
+            "RTE_CONGEST_1": "보통",
+            "RTE_ARRV_TM_1": "곧 도착",
+            "RTE_ARRV_STN_1": "노들섬",
+            "RTE_CONGEST_2": "보통",
+            "RTE_ARRV_TM_2": "17분16초후[9번째 전]",
+            "RTE_ARRV_STN_2": "봉천사거리.봉천중앙시장"
+          },
+          {
+            "RTE_STN_NM": "노들섬",
+            "RTE_NM": "507",
+            "RTE_ID": "100100082",
+            "RTE_SECT": "노들역~노들섬",
+            "RTE_CONGEST_1": "여유",
+            "RTE_ARRV_TM_1": "8분55초후[4번째 전]",
+            "RTE_ARRV_STN_1": "현대아파트",
+            "RTE_CONGEST_2": "여유",
+            "RTE_ARRV_TM_2": "21분11초후[11번째 전]",
+            "RTE_ARRV_STN_2": "신풍시장"
+          },
+          {
+            "RTE_STN_NM": "노들섬",
+            "RTE_NM": "605",
+            "RTE_ID": "100100090",
+            "RTE_SECT": "노들역~노들섬",
+            "RTE_CONGEST_1": "여유",
+            "RTE_ARRV_TM_1": "곧 도착",
+            "RTE_ARRV_STN_1": "노들섬",
+            "RTE_CONGEST_2": "여유",
+            "RTE_ARRV_TM_2": "6분11초후[3번째 전]",
+            "RTE_ARRV_STN_2": "노량진수산시장.CTS기독교TV"
+          },
+          {
+            "RTE_STN_NM": "노들섬",
+            "RTE_NM": "742",
+            "RTE_ID": "100100116",
+            "RTE_SECT": "노들역~노들섬",
+            "RTE_CONGEST_1": "여유",
+            "RTE_ARRV_TM_1": "7분4초후[3번째 전]",
+            "RTE_ARRV_STN_1": "동작구청.노량진초등학교앞",
+            "RTE_CONGEST_2": "여유",
+            "RTE_ARRV_TM_2": "16분28초후[8번째 전]",
+            "RTE_ARRV_STN_2": "상도동중앙하이츠빌.상도전통시장"
+          },
+          {
+            "RTE_STN_NM": "노들섬",
+            "RTE_NM": "750A",
+            "RTE_ID": "100100114",
+            "RTE_SECT": "상도터널노량진동~노들섬",
+            "RTE_CONGEST_1": "여유",
+            "RTE_ARRV_TM_1": "3분12초후[1번째 전]",
+            "RTE_ARRV_STN_1": "상도터널.노들역3번출구",
+            "RTE_CONGEST_2": "여유",
+            "RTE_ARRV_TM_2": "18분20초후[9번째 전]",
+            "RTE_ARRV_STN_2": "봉천사거리.봉천중앙시장"
+          },
+          {
+            "RTE_STN_NM": "노들섬",
+            "RTE_NM": "750B",
+            "RTE_ID": "100100565",
+            "RTE_SECT": "상도터널노량진동~노들섬",
+            "RTE_CONGEST_1": "여유",
+            "RTE_ARRV_TM_1": "54분58초후[28번째 전]",
+            "RTE_ARRV_STN_1": "한강대교북단.LG유플러스",
+            "RTE_CONGEST_2": "여유",
+            "RTE_ARRV_TM_2": "58분58초후[31번째 전]",
+            "RTE_ARRV_STN_2": "삼각지역"
+          },
+          {
+            "RTE_STN_NM": "노들섬",
+            "RTE_NM": "752",
+            "RTE_ID": "100100117",
+            "RTE_SECT": "흑석동효사정앞~노들섬",
+            "RTE_CONGEST_1": "여유",
+            "RTE_ARRV_TM_1": "3분18초후[1번째 전]",
+            "RTE_ARRV_STN_1": "흑석동효사정앞",
+            "RTE_CONGEST_2": "여유",
+            "RTE_ARRV_TM_2": "10분43초후[6번째 전]",
+            "RTE_ARRV_STN_2": "이수교"
+          },
+          {
+            "RTE_STN_NM": "노들섬",
+            "RTE_NM": "N15",
+            "RTE_ID": "100100610",
+            "RTE_SECT": "노들역~노들섬",
+            "RTE_CONGEST_1": "정보없음",
+            "RTE_ARRV_TM_1": "운행종료",
+            "RTE_ARRV_STN_1": "노들섬",
+            "RTE_CONGEST_2": "정보없음",
+            "RTE_ARRV_TM_2": "운행종료",
+            "RTE_ARRV_STN_2": "남태령역"
+          },
+          {
+            "RTE_STN_NM": "노들섬",
+            "RTE_NM": "6211",
+            "RTE_ID": "100100289",
+            "RTE_SECT": "노들역~노들섬",
+            "RTE_CONGEST_1": "여유",
+            "RTE_ARRV_TM_1": "2분1초후[0번째 전]",
+            "RTE_ARRV_STN_1": "노들섬",
+            "RTE_CONGEST_2": "여유",
+            "RTE_ARRV_TM_2": "9분3초후[4번째 전]",
+            "RTE_ARRV_STN_2": "현대아파트"
+          }
+        ]
+      }
+    ],
+    "ACDNT_CNTRL_STTS": [],
+    "SBIKE_STTS": [
+      {
+        "SBIKE_SPOT_NM": "869.노들섬 동측 앞",
+        "SBIKE_SPOT_ID": "ST-2239",
+        "SBIKE_SHARED": "0",
+        "SBIKE_PARKING_CNT": "0",
+        "SBIKE_RACK_CNT": "10",
+        "SBIKE_X": 126.95914459,
+        "SBIKE_Y": 37.51729584
+      },
+      {
+        "SBIKE_SPOT_NM": "870.노들섬 서측 앞",
+        "SBIKE_SPOT_ID": "ST-2240",
+        "SBIKE_SHARED": "30",
+        "SBIKE_PARKING_CNT": "3",
+        "SBIKE_RACK_CNT": "10",
+        "SBIKE_X": 126.95829773,
+        "SBIKE_Y": 37.51731873
+      },
+      {
+        "SBIKE_SPOT_NM": "4605. 노들섬 다목적홀(동쪽) 숲, 앞",
+        "SBIKE_SPOT_ID": "ST-2438",
+        "SBIKE_SHARED": "0",
+        "SBIKE_PARKING_CNT": "0",
+        "SBIKE_RACK_CNT": "10",
+        "SBIKE_X": 126.95922089,
+        "SBIKE_Y": 37.51758957
+      }
+    ],
+    "WEATHER_STTS": [
+      {
+        "WEATHER_TIME": "2025-04-21 12:50",
+        "TEMP": "24.2",
+        "SENSIBLE_TEMP": "24.2",
+        "MAX_TEMP": "26.0",
+        "MIN_TEMP": "17.0",
+        "HUMIDITY": "49",
+        "WIND_DIRCT": "NE",
+        "WIND_SPD": "1.5",
+        "PRECIPITATION": "-",
+        "PRECPT_TYPE": "없음",
+        "PCP_MSG": "비 또는 눈 소식이 없어요.",
+        "SUNRISE": "05:49",
+        "SUNSET": "19:13",
+        "UV_INDEX_LVL": "6",
+        "UV_INDEX": "높음",
+        "UV_MSG": "햇볕에 노출 시 1-2시간 이내에도 피부 화상을 입을 수 있어 위험해요.한낮에는 실내나 그늘에 머물러주세요.외출시 긴 소매 옷, 모자, 선글라스를 착용해주세요.자외선 차단제를 정기적으로 발라주세요.",
+        "PM25_INDEX": "좋음",
+        "PM25": "9",
+        "PM10_INDEX": "보통",
+        "PM10": "33",
+        "AIR_IDX": "보통",
+        "AIR_IDX_MVL": "58.0",
+        "AIR_IDX_MAIN": "O3",
+        "AIR_MSG": "호흡기가 예민하신 분들은 몸상태 유의하며 활동해주세요.",
+        "FCST24HOURS": [
+          {
+            "FCST_DT": "202504211300",
+            "TEMP": "23",
+            "PRECIPITATION": "-",
+            "PRECPT_TYPE": "없음",
+            "RAIN_CHANCE": "0",
+            "SKY_STTS": "흐림"
+          },
+          {
+            "FCST_DT": "202504211400",
+            "TEMP": "24",
+            "PRECIPITATION": "-",
+            "PRECPT_TYPE": "없음",
+            "RAIN_CHANCE": "0",
+            "SKY_STTS": "흐림"
+          },
+          {
+            "FCST_DT": "202504211500",
+            "TEMP": "24",
+            "PRECIPITATION": "-",
+            "PRECPT_TYPE": "없음",
+            "RAIN_CHANCE": "0",
+            "SKY_STTS": "흐림"
+          },
+          {
+            "FCST_DT": "202504211600",
+            "TEMP": "24",
+            "PRECIPITATION": "-",
+            "PRECPT_TYPE": "없음",
+            "RAIN_CHANCE": "0",
+            "SKY_STTS": "구름많음"
+          },
+          {
+            "FCST_DT": "202504211700",
+            "TEMP": "24",
+            "PRECIPITATION": "-",
+            "PRECPT_TYPE": "없음",
+            "RAIN_CHANCE": "0",
+            "SKY_STTS": "맑음"
+          },
+          {
+            "FCST_DT": "202504211800",
+            "TEMP": "23",
+            "PRECIPITATION": "-",
+            "PRECPT_TYPE": "없음",
+            "RAIN_CHANCE": "0",
+            "SKY_STTS": "흐림"
+          },
+          {
+            "FCST_DT": "202504211900",
+            "TEMP": "21",
+            "PRECIPITATION": "-",
+            "PRECPT_TYPE": "없음",
+            "RAIN_CHANCE": "0",
+            "SKY_STTS": "맑음"
+          },
+          {
+            "FCST_DT": "202504212000",
+            "TEMP": "21",
+            "PRECIPITATION": "-",
+            "PRECPT_TYPE": "없음",
+            "RAIN_CHANCE": "0",
+            "SKY_STTS": "맑음"
+          },
+          {
+            "FCST_DT": "202504212100",
+            "TEMP": "20",
+            "PRECIPITATION": "-",
+            "PRECPT_TYPE": "없음",
+            "RAIN_CHANCE": "0",
+            "SKY_STTS": "맑음"
+          },
+          {
+            "FCST_DT": "202504212200",
+            "TEMP": "20",
+            "PRECIPITATION": "-",
+            "PRECPT_TYPE": "없음",
+            "RAIN_CHANCE": "20",
+            "SKY_STTS": "구름많음"
+          },
+          {
+            "FCST_DT": "202504212300",
+            "TEMP": "20",
+            "PRECIPITATION": "-",
+            "PRECPT_TYPE": "없음",
+            "RAIN_CHANCE": "20",
+            "SKY_STTS": "구름많음"
+          },
+          {
+            "FCST_DT": "202504220000",
+            "TEMP": "19",
+            "PRECIPITATION": "-",
+            "PRECPT_TYPE": "없음",
+            "RAIN_CHANCE": "20",
+            "SKY_STTS": "구름많음"
+          },
+          {
+            "FCST_DT": "202504220100",
+            "TEMP": "19",
+            "PRECIPITATION": "-",
+            "PRECPT_TYPE": "없음",
+            "RAIN_CHANCE": "30",
+            "SKY_STTS": "흐림"
+          },
+          {
+            "FCST_DT": "202504220200",
+            "TEMP": "19",
+            "PRECIPITATION": "-",
+            "PRECPT_TYPE": "없음",
+            "RAIN_CHANCE": "30",
+            "SKY_STTS": "흐림"
+          },
+          {
+            "FCST_DT": "202504220300",
+            "TEMP": "19",
+            "PRECIPITATION": "-",
+            "PRECPT_TYPE": "없음",
+            "RAIN_CHANCE": "30",
+            "SKY_STTS": "흐림"
+          },
+          {
+            "FCST_DT": "202504220400",
+            "TEMP": "18",
+            "PRECIPITATION": "-",
+            "PRECPT_TYPE": "없음",
+            "RAIN_CHANCE": "30",
+            "SKY_STTS": "흐림"
+          },
+          {
+            "FCST_DT": "202504220500",
+            "TEMP": "18",
+            "PRECIPITATION": "1 미만",
+            "PRECPT_TYPE": "비",
+            "RAIN_CHANCE": "60",
+            "SKY_STTS": "흐림"
+          },
+          {
+            "FCST_DT": "202504220600",
+            "TEMP": "18",
+            "PRECIPITATION": "1 미만",
+            "PRECPT_TYPE": "비",
+            "RAIN_CHANCE": "60",
+            "SKY_STTS": "흐림"
+          },
+          {
+            "FCST_DT": "202504220700",
+            "TEMP": "17",
+            "PRECIPITATION": "-",
+            "PRECPT_TYPE": "없음",
+            "RAIN_CHANCE": "30",
+            "SKY_STTS": "흐림"
+          },
+          {
+            "FCST_DT": "202504220800",
+            "TEMP": "17",
+            "PRECIPITATION": "1.0",
+            "PRECPT_TYPE": "비",
+            "RAIN_CHANCE": "60",
+            "SKY_STTS": "흐림"
+          },
+          {
+            "FCST_DT": "202504220900",
+            "TEMP": "17",
+            "PRECIPITATION": "5.0",
+            "PRECPT_TYPE": "비",
+            "RAIN_CHANCE": "65",
+            "SKY_STTS": "흐림"
+          },
+          {
+            "FCST_DT": "202504221000",
+            "TEMP": "16",
+            "PRECIPITATION": "5.0",
+            "PRECPT_TYPE": "비",
+            "RAIN_CHANCE": "65",
+            "SKY_STTS": "흐림"
+          },
+          {
+            "FCST_DT": "202504221100",
+            "TEMP": "17",
+            "PRECIPITATION": "4.0",
+            "PRECPT_TYPE": "비",
+            "RAIN_CHANCE": "63",
+            "SKY_STTS": "흐림"
+          },
+          {
+            "FCST_DT": "202504221200",
+            "TEMP": "17",
+            "PRECIPITATION": "6.0",
+            "PRECPT_TYPE": "비",
+            "RAIN_CHANCE": "71",
+            "SKY_STTS": "흐림"
+          }
+        ],
+        "NEWS_LIST": []
+      }
+    ],
+    "CHARGER_STTS": [],
+    "EVENT_STTS": [
+      {
+        "EVENT_NM": "노들섬 공간투어 [노들한바퀴2.0]",
+        "EVENT_PERIOD": "2025-04-02~2025-12-31",
+        "EVENT_PLACE": "노들섬 전역",
+        "EVENT_X": 126.958036465507,
+        "EVENT_Y": 37.5176638307111,
+        "PAY_YN": null,
+        "THUMBNAIL": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=f953bb15b3b04fda94ee7a5af7a264b9&thumb=Y",
+        "URL": "https://culture.seoul.go.kr/culture/culture/cultureEvent/view.do?cultcode=153008&menuNo=200011",
+        "EVENT_ETC_DETAIL": ""
+      },
+      {
+        "EVENT_NM": "2025 서울문화재단 신당창작아케이드 노들섬 상설전시 아뜰리에 [어쩌다 마주친 공예]",
+        "EVENT_PERIOD": "2025-03-25~2025-12-31",
+        "EVENT_PLACE": "노들서가",
+        "EVENT_X": 126.958036465507,
+        "EVENT_Y": 37.5176638307111,
+        "PAY_YN": null,
+        "THUMBNAIL": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=6108eefdf39f4b46a2f5c78212f3c79a&thumb=Y",
+        "URL": "https://culture.seoul.go.kr/culture/culture/cultureEvent/view.do?cultcode=152960&menuNo=200009",
+        "EVENT_ETC_DETAIL": ""
+      }
+    ],
+    "LIVE_CMRCL_STTS": null
+  }
+}
