@@ -122,4 +122,13 @@ public class CityDataBatchService {
             "지역 코드 '" + areaCd + "'를 찾을 수 없습니다."
         ));
   }
+
+  public CityDataDto loadByAreaNm(String areaNm) throws IOException {
+    return loadAllAreaMetadata().stream()
+            .filter(dto -> areaNm.equals(dto.getAreaNm()))
+            .findFirst()
+            .orElseThrow(() -> new NoSuchElementException(
+                    "지역 이름 '" + areaNm + "'을(를) 찾을 수 없습니다."
+            ));
+  }
 }

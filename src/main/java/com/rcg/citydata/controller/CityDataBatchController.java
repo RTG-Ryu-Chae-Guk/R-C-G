@@ -34,4 +34,17 @@ public class CityDataBatchController {
       return ResponseEntity.notFound().build();
     }
   }
+
+  @GetMapping("/by-name/{areaNm}")
+  @Operation(summary = "areaNm에 따른 데이터 조회")
+  public ResponseEntity<CityDataDto> getByAreaNm(@PathVariable String areaNm) {
+    try {
+      CityDataDto dto = batchService.loadByAreaNm(areaNm);
+      return ResponseEntity.ok(dto);
+    } catch (IOException e) {
+      return ResponseEntity.status(500).build();
+    } catch (NoSuchElementException e) {
+      return ResponseEntity.notFound().build();
+    }
+  }
 }

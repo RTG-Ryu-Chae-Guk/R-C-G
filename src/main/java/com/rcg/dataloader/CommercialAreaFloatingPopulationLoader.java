@@ -2,8 +2,8 @@ package com.rcg.dataloader;
 
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
-import com.rcg.entity.CommercialAreaFloatingPopulation;
-import com.rcg.repository.CommercialAreaFloatingPopulationRepository;
+import com.rcg.community.entity.CommercialAreaFloatingPopulation;
+import com.rcg.community.repository.CommercialAreaFloatingPopulationRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
