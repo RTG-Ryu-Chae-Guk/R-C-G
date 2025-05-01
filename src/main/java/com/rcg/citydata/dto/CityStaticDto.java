@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
-public class CityDataDto {
+public class CityStaticDto {
   // 장소 메타
   private String areaNm;            // AREA_NM           핫스팟 장소명
   private String areaCd;            // AREA_CD           핫스팟 코드명
