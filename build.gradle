@@ -43,15 +43,18 @@ dependencies {
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'
 	implementation 'com.opencsv:opencsv:5.7.1'
+
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+
 }
 
 tasks.named('test') {
 	useJUnitPlatform()
 }
-sourceSets {
-	main {
-		java {
-			srcDirs = ['src/main/java']
-		}
-	}
-}
+//sourceSets {
+//	main {
+//		java {
+//			srcDirs = ['src/main/java']
+//		}
+//	}
+//}
