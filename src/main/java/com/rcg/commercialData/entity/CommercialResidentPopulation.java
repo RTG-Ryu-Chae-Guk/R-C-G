@@ -1,4 +1,4 @@
-package com.rcg.community.entity;
+package com.rcg.commercialData.entity;
 
 import com.opencsv.bean.CsvBindByName;
 import jakarta.persistence.*;

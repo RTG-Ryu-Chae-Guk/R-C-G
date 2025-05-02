@@ -2,8 +2,8 @@ package com.rcg.dataloader;
 
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
-import com.rcg.community.entity.CommercialAreaSales;
-import com.rcg.community.repository.CommercialAreaSalesRepository;
+import com.rcg.commercialData.entity.CommercialAreaSales;
+import com.rcg.commercialData.repository.CommercialAreaSalesRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;

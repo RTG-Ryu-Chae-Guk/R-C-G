@@ -2,8 +2,8 @@ package com.rcg.dataloader;
 
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
-import com.rcg.community.entity.CommercialSpending;
-import com.rcg.community.repository.CommercialSpendingRepository;
+import com.rcg.commercialData.entity.CommercialSpending;
+import com.rcg.commercialData.repository.CommercialSpendingRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;

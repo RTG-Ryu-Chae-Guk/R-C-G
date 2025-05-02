@@ -2,8 +2,8 @@ package com.rcg.dataloader;
 
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
-import com.rcg.community.entity.CommercialAreaStoreStatus;
-import com.rcg.community.repository.CommercialAreaStoreStatusRepository;
+import com.rcg.commercialData.entity.CommercialAreaStoreStatus;
+import com.rcg.commercialData.repository.CommercialAreaStoreStatusRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
