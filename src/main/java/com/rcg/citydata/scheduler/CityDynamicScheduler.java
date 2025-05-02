@@ -44,6 +44,9 @@ public class CityDynamicScheduler {
   @Value("${citydata.path}")
   private String dataPath;
 
+  @Value("${citydata.api-key}")
+  private String apiKey;
+
   // 제외할 JSON 필드 목록
   private static final Set<String> excludeFields = Set.of(
       "AREA_NM","AREA_CD","AREA_CONGEST_LVL","AREA_CONGEST_MSG",
@@ -90,7 +93,7 @@ public class CityDynamicScheduler {
     // 기존 DB 데이터 일괄 삭제
     dynamicRepository.deleteAllInBatch();
 
-    String apiUrl = "http://openapi.seoul.go.kr:8088/4d716b496772696e37397855435551/json/citydata/1/5/{regionCode}";
+    String apiUrlTemplate = "http://openapi.seoul.go.kr:8088/{apiKey}/json/citydata/1/5/{regionCode}";
     Path baseDir = Paths.get(dataPath);
 
     try (Stream<Path> folders = Files.list(baseDir).filter(Files::isDirectory)) {
@@ -112,10 +115,10 @@ public class CityDynamicScheduler {
 
           // API 호출
           String jsonResponse = webClient.get()
-              .uri(apiUrl, regionCode)
-              .retrieve()
-              .bodyToMono(String.class)
-              .block();
+                  .uri(apiUrlTemplate, apiKey, regionCode)
+                  .retrieve()
+                  .bodyToMono(String.class)
+                  .block();
 
           // 파일명 생성 및 저장
           String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss"));

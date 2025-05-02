@@ -20,7 +20,10 @@ public class Comment {
     @Column(name = "b_no")
     private String b_no;
 
+    @Lob
+    @Column(columnDefinition = "TEXT")
     private String content;
+
     private int likeCount = 0;
     private LocalDateTime createdAt = LocalDateTime.now();
 }

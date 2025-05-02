@@ -1,6 +1,7 @@
 // CommentDTO.java
 package com.rcg.community.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,5 +14,7 @@ public class CommentDTO {
     private String content;
 
     @Schema(description = "부모 댓글 ID (댓글이면 null, 대댓글이면 부모 ID)", example = "null")
+    @JsonProperty("parentId") // ← 이거 꼭 추가
     private Long parentId;
+
 }
