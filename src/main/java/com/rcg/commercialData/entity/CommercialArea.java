@@ -1,4 +1,4 @@
-package com.rcg.community.entity;
+package com.rcg.commercialData.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -34,7 +34,10 @@ public class CommercialArea {
 
     private Double relmAr; // 상권 영역 면적 (m²)
 
-    private Double xcntsValue; // X좌표 (경도, 지도 시각화용)
+    private Double xcntsValue; // TM기준 X좌표
 
-    private Double ydntsValue; // Y좌표 (위도, 지도 시각화용)
+    private Double ydntsValue; // TM기준 Y좌표
+
+    private Double latitude;   // 위도 (WGS84)
+    private Double longitude;  // 경도 (WGS84)
 }
