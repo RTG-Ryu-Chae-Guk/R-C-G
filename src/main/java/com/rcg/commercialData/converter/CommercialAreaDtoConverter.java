@@ -4,6 +4,9 @@ import com.rcg.commercialData.dto.*;
 import com.rcg.commercialData.entity.*;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Component
 public class CommercialAreaDtoConverter {
 
@@ -16,45 +19,46 @@ public class CommercialAreaDtoConverter {
                 .adstrdCdNm(area.getAdstrdCdNm())
                 .signguCdNm(area.getSignguCdNm())
                 .relmAr(area.getRelmAr())
-                .latitude(area.getLatitude())     // ✅ 위도 (WGS84)
-                .longitude(area.getLongitude())   // ✅ 경도 (WGS84)
+                .latitude(area.getLatitude())
+                .longitude(area.getLongitude())
                 .build();
     }
 
-
     public CommercialAreaFloatingPopulationDto toDto(CommercialAreaFloatingPopulation entity) {
         if (entity == null) return null;
+
         return CommercialAreaFloatingPopulationDto.builder()
                 .trdarCd(entity.getTrdarCd())
                 .trdarCdNm(entity.getTrdarCdNm())
                 .stdrYyquCd(entity.getStdrYyquCd())
-                .totFlpopCo(entity.getTotFlpopCo())
-                .mlFlpopCo(entity.getMlFlpopCo())
-                .fmlFlpopCo(entity.getFmlFlpopCo())
-                .agrde10FlpopCo(entity.getAgrde10FlpopCo())
-                .agrde20FlpopCo(entity.getAgrde20FlpopCo())
-                .agrde30FlpopCo(entity.getAgrde30FlpopCo())
-                .agrde40FlpopCo(entity.getAgrde40FlpopCo())
-                .agrde50FlpopCo(entity.getAgrde50FlpopCo())
-                .agrde60FlpopCo(entity.getAgrde60FlpopCo())
-                .tmzon0006FlpopCo(entity.getTmzon0006FlpopCo())
-                .tmzon0611FlpopCo(entity.getTmzon0611FlpopCo())
-                .tmzon1114FlpopCo(entity.getTmzon1114FlpopCo())
-                .tmzon1417FlpopCo(entity.getTmzon1417FlpopCo())
-                .tmzon1721FlpopCo(entity.getTmzon1721FlpopCo())
-                .tmzon2124FlpopCo(entity.getTmzon2124FlpopCo())
-                .monFlpopCo(entity.getMonFlpopCo())
-                .tuesFlpopCo(entity.getTuesFlpopCo())
-                .wedFlpopCo(entity.getWedFlpopCo())
-                .thurFlpopCo(entity.getThurFlpopCo())
-                .friFlpopCo(entity.getFriFlpopCo())
-                .satFlpopCo(entity.getSatFlpopCo())
-                .sunFlpopCo(entity.getSunFlpopCo())
+                .totFlpopCo(toLong(entity.getTotFlpopCo()))
+                .mlFlpopCo(toLong(entity.getMlFlpopCo()))
+                .fmlFlpopCo(toLong(entity.getFmlFlpopCo()))
+                .agrde10FlpopCo(toLong(entity.getAgrde10FlpopCo()))
+                .agrde20FlpopCo(toLong(entity.getAgrde20FlpopCo()))
+                .agrde30FlpopCo(toLong(entity.getAgrde30FlpopCo()))
+                .agrde40FlpopCo(toLong(entity.getAgrde40FlpopCo()))
+                .agrde50FlpopCo(toLong(entity.getAgrde50FlpopCo()))
+                .agrde60FlpopCo(toLong(entity.getAgrde60FlpopCo()))
+                .tmzon0006FlpopCo(toLong(entity.getTmzon0006FlpopCo()))
+                .tmzon0611FlpopCo(toLong(entity.getTmzon0611FlpopCo()))
+                .tmzon1114FlpopCo(toLong(entity.getTmzon1114FlpopCo()))
+                .tmzon1417FlpopCo(toLong(entity.getTmzon1417FlpopCo()))
+                .tmzon1721FlpopCo(toLong(entity.getTmzon1721FlpopCo()))
+                .tmzon2124FlpopCo(toLong(entity.getTmzon2124FlpopCo()))
+                .monFlpopCo(toLong(entity.getMonFlpopCo()))
+                .tuesFlpopCo(toLong(entity.getTuesFlpopCo()))
+                .wedFlpopCo(toLong(entity.getWedFlpopCo()))
+                .thurFlpopCo(toLong(entity.getThurFlpopCo()))
+                .friFlpopCo(toLong(entity.getFriFlpopCo()))
+                .satFlpopCo(toLong(entity.getSatFlpopCo()))
+                .sunFlpopCo(toLong(entity.getSunFlpopCo()))
                 .build();
     }
 
     public CommercialAreaSalesDto toDto(CommercialAreaSales entity) {
         if (entity == null) return null;
+
         return CommercialAreaSalesDto.builder()
                 .trdarCd(entity.getTrdarCd())
                 .trdarCdNm(entity.getTrdarCdNm())
@@ -114,6 +118,7 @@ public class CommercialAreaDtoConverter {
 
     public CommercialAreaStoreStatusDto toDto(CommercialAreaStoreStatus entity) {
         if (entity == null) return null;
+
         return CommercialAreaStoreStatusDto.builder()
                 .trdarCd(entity.getTrdarCd())
                 .trdarCdNm(entity.getTrdarCdNm())
@@ -132,36 +137,42 @@ public class CommercialAreaDtoConverter {
 
     public CommercialResidentPopulationDto toDto(CommercialResidentPopulation entity) {
         if (entity == null) return null;
+
         return CommercialResidentPopulationDto.builder()
                 .trdarCd(entity.getTrdarCd())
                 .trdarCdNm(entity.getTrdarCdNm())
                 .stdrYyquCd(entity.getStdrYyquCd())
-                .totResidPopltnCnt(entity.getTotResidPopltnCnt())
-                .mlResidPopltnCnt(entity.getMlResidPopltnCnt())
-                .fmlResidPopltnCnt(entity.getFmlResidPopltnCnt())
-                .age10ResidPopltnCnt(entity.getAge10ResidPopltnCnt())
-                .age20ResidPopltnCnt(entity.getAge20ResidPopltnCnt())
-                .age30ResidPopltnCnt(entity.getAge30ResidPopltnCnt())
-                .age40ResidPopltnCnt(entity.getAge40ResidPopltnCnt())
-                .age50ResidPopltnCnt(entity.getAge50ResidPopltnCnt())
-                .age60AboveResidPopltnCnt(entity.getAge60AboveResidPopltnCnt())
-                .mlAge10ResidPopltnCnt(entity.getMlAge10ResidPopltnCnt())
-                .mlAge20ResidPopltnCnt(entity.getMlAge20ResidPopltnCnt())
-                .mlAge30ResidPopltnCnt(entity.getMlAge30ResidPopltnCnt())
-                .mlAge40ResidPopltnCnt(entity.getMlAge40ResidPopltnCnt())
-                .mlAge50ResidPopltnCnt(entity.getMlAge50ResidPopltnCnt())
-                .mlAge60AboveResidPopltnCnt(entity.getMlAge60AboveResidPopltnCnt())
-                .fmlAge10ResidPopltnCnt(entity.getFmlAge10ResidPopltnCnt())
-                .fmlAge20ResidPopltnCnt(entity.getFmlAge20ResidPopltnCnt())
-                .fmlAge30ResidPopltnCnt(entity.getFmlAge30ResidPopltnCnt())
-                .fmlAge40ResidPopltnCnt(entity.getFmlAge40ResidPopltnCnt())
-                .fmlAge50ResidPopltnCnt(entity.getFmlAge50ResidPopltnCnt())
-                .fmlAge60AboveResidPopltnCnt(entity.getFmlAge60AboveResidPopltnCnt())
+                .totResidPopltnCnt(toLong(entity.getTotResidPopltnCnt()))
+                .mlResidPopltnCnt(toLong(entity.getMlResidPopltnCnt()))
+                .fmlResidPopltnCnt(toLong(entity.getFmlResidPopltnCnt()))
+                .age10ResidPopltnCnt(toLong(entity.getAge10ResidPopltnCnt()))
+                .age20ResidPopltnCnt(toLong(entity.getAge20ResidPopltnCnt()))
+                .age30ResidPopltnCnt(toLong(entity.getAge30ResidPopltnCnt()))
+                .age40ResidPopltnCnt(toLong(entity.getAge40ResidPopltnCnt()))
+                .age50ResidPopltnCnt(toLong(entity.getAge50ResidPopltnCnt()))
+                .age60AboveResidPopltnCnt(toLong(entity.getAge60AboveResidPopltnCnt()))
+                .mlAge10ResidPopltnCnt(toLong(entity.getMlAge10ResidPopltnCnt()))
+                .mlAge20ResidPopltnCnt(toLong(entity.getMlAge20ResidPopltnCnt()))
+                .mlAge30ResidPopltnCnt(toLong(entity.getMlAge30ResidPopltnCnt()))
+                .mlAge40ResidPopltnCnt(toLong(entity.getMlAge40ResidPopltnCnt()))
+                .mlAge50ResidPopltnCnt(toLong(entity.getMlAge50ResidPopltnCnt()))
+                .mlAge60AboveResidPopltnCnt(toLong(entity.getMlAge60AboveResidPopltnCnt()))
+                .fmlAge10ResidPopltnCnt(toLong(entity.getFmlAge10ResidPopltnCnt()))
+                .fmlAge20ResidPopltnCnt(toLong(entity.getFmlAge20ResidPopltnCnt()))
+                .fmlAge30ResidPopltnCnt(toLong(entity.getFmlAge30ResidPopltnCnt()))
+                .fmlAge40ResidPopltnCnt(toLong(entity.getFmlAge40ResidPopltnCnt()))
+                .fmlAge50ResidPopltnCnt(toLong(entity.getFmlAge50ResidPopltnCnt()))
+                .fmlAge60AboveResidPopltnCnt(toLong(entity.getFmlAge60AboveResidPopltnCnt()))
                 .build();
+    }
+
+    private Long toLong(Integer value) {
+        return value != null ? value.longValue() : null;
     }
 
     public CommercialSpendingDto toDto(CommercialSpending entity) {
         if (entity == null) return null;
+
         return CommercialSpendingDto.builder()
                 .trdarCd(entity.getTrdarCd())
                 .trdarCdNm(entity.getTrdarCdNm())
@@ -177,5 +188,13 @@ public class CommercialAreaDtoConverter {
                 .educationExpendAmt(entity.getEducationExpendAmt())
                 .entertainmentExpendAmt(entity.getEntertainmentExpendAmt())
                 .build();
+    }
+
+    public List<CommercialAreaSalesDto> toSalesDtoList(List<CommercialAreaSales> entities) {
+        return entities.stream().map(this::toDto).collect(Collectors.toList());
+    }
+
+    public List<CommercialAreaStoreStatusDto> toStoreStatusDtoList(List<CommercialAreaStoreStatus> entities) {
+        return entities.stream().map(this::toDto).collect(Collectors.toList());
     }
 }

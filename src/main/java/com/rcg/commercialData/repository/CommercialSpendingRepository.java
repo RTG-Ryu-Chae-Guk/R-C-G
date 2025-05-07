@@ -7,4 +7,6 @@ import java.util.Optional;
 
 public interface CommercialSpendingRepository extends JpaRepository<CommercialSpending, Long> {
     Optional<CommercialSpending> findByTrdarCdAndStdrYyquCd(String trdarCd, String stdrYyquCd);
+    Optional<CommercialSpending> findTopByTrdarCdOrderByStdrYyquCdDesc(String trdarCd);
+
 }

@@ -37,5 +37,4 @@ public class CommercialAreaController {
         List<CommercialAreaDto> areas = commercialAreaService.getAreasInBoundingBox(minLat, maxLat, minLng, maxLng);
         return ResponseEntity.ok(areas);
     }
-
 }

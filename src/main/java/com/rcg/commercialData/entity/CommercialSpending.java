@@ -79,4 +79,13 @@ public class CommercialSpending {
     @CsvBindByName(column = "유흥_지출_총금액")
     @Column(name = "entertainment_expend_amt")
     private Long entertainmentExpendAmt;
+
+    @CsvBindByName(column = "월_평균_소득_금액")
+    @Column(name = "monthly_income_amt")
+    private Long monthlyIncomeAmt;
+
+    @CsvBindByName(column = "소득_구간_코드")
+    @Column(name = "income_section_cd")
+    private String incomeSectionCd;
+
 }
