@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 
@@ -40,11 +41,14 @@ public class CommercialResidentPopulationLoader implements CommandLineRunner {
             return;
         }
 
-        try (InputStream is = resource.getInputStream();
-             BufferedReader br = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8))) {
-
+        try (
+                InputStream is = resource.getInputStream();
+                InputStreamReader isr = new InputStreamReader(is, Charset.forName("EUC-KR")); // ✅ 인코딩 수정
+                BufferedReader br = new BufferedReader(new CommercialAreaFloatingPopulationLoader.BOMStrippedReader(isr))
+        ) {
             CsvToBean<CommercialResidentPopulation> csvToBean = new CsvToBeanBuilder<CommercialResidentPopulation>(br)
                     .withType(CommercialResidentPopulation.class)
+                    .withSeparator(',')
                     .withIgnoreLeadingWhiteSpace(true)
                     .build();
 

@@ -40,6 +40,18 @@ public class CommercialResidentPopulation {
     @Column(name = "trdar_cd_nm")
     private String trdarCdNm;
 
+    @CsvBindByName(column = "총_가구_수")
+    @Column(name = "total_households")
+    private Integer totalHouseholds;
+
+    @CsvBindByName(column = "아파트_가구_수")
+    @Column(name = "apartment_households")
+    private Integer apartmentHouseholds;
+
+    @CsvBindByName(column = "비_아파트_가구_수")
+    @Column(name = "non_apartment_households")
+    private Integer nonApartmentHouseholds;
+
     @CsvBindByName(column = "총_상주인구_수")
     @Column(name = "tot_resid_popltn_cnt")
     private Integer totResidPopltnCnt;

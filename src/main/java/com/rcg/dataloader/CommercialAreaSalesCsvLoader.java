@@ -29,7 +29,7 @@ public class CommercialAreaSalesCsvLoader implements CommandLineRunner {
             return;
         }
 
-        String[] years = {"2020", "2021", "2022", "2023"};
+        String[] years = {"2019","2020", "2021", "2022", "2023","2024"};
 
         for (String year : years) {
             String path = "/data/sales/commercial_area_" + year + ".csv";
@@ -38,6 +38,7 @@ public class CommercialAreaSalesCsvLoader implements CommandLineRunner {
 
                 CsvToBean<CommercialAreaSales> csvToBean = new CsvToBeanBuilder<CommercialAreaSales>(br)
                         .withType(CommercialAreaSales.class)
+                        .withSeparator(',')
                         .withIgnoreLeadingWhiteSpace(true)
                         .build();
 

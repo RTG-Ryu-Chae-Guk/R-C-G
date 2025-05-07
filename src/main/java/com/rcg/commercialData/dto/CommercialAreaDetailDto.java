@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -13,8 +15,8 @@ public class CommercialAreaDetailDto {
     private CommercialAreaDto area;
 
     private CommercialAreaFloatingPopulationDto floatingPopulation;
-    private CommercialAreaSalesDto sales;
-    private CommercialAreaStoreStatusDto storeStatus;
+    private List<CommercialAreaSalesDto> salesList;
+    private List<CommercialAreaStoreStatusDto> storeStatusList;
     private CommercialResidentPopulationDto residentPopulation;
     private CommercialSpendingDto spending;
 }

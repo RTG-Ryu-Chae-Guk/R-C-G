@@ -18,41 +18,7 @@ import java.util.stream.Collectors;
 public class CommercialAreaService {
 
     private final CommercialAreaRepository areaRepository;
-    private final CommercialAreaFloatingPopulationRepository floatingPopulationRepository;
-    private final CommercialAreaSalesRepository salesRepository;
-    private final CommercialAreaStoreStatusRepository storeStatusRepository;
-    private final CommercialResidentPopulationRepository residentPopulationRepository;
-    private final CommercialSpendingRepository spendingRepository;
-    private final CommercialAreaDtoConverter converter;
 
-    public CommercialAreaDetailDto getCommercialAreaDetail(String trdarCd, String stdrYyquCd) {
-        CommercialArea area = areaRepository.findByTrdarCd(trdarCd)
-                .orElseThrow(() -> new IllegalArgumentException("해당 상권 정보가 없습니다."));
-
-        CommercialAreaFloatingPopulation floating = floatingPopulationRepository
-                .findByTrdarCdAndStdrYyquCd(trdarCd, stdrYyquCd).orElse(null);
-
-        CommercialAreaSales sales = salesRepository
-                .findByTrdarCdAndStdrYyquCd(trdarCd, stdrYyquCd).orElse(null);
-
-        CommercialAreaStoreStatus storeStatus = storeStatusRepository
-                .findByTrdarCdAndStdrYyquCd(trdarCd, stdrYyquCd).orElse(null);
-
-        CommercialResidentPopulation resident = residentPopulationRepository
-                .findByTrdarCdAndStdrYyquCd(trdarCd, stdrYyquCd).orElse(null);
-
-        CommercialSpending spending = spendingRepository
-                .findByTrdarCdAndStdrYyquCd(trdarCd, stdrYyquCd).orElse(null);
-
-        return CommercialAreaDetailDto.builder()
-                .area(converter.toDto(area))
-                .floatingPopulation(converter.toDto(floating))
-                .sales(converter.toDto(sales))
-                .storeStatus(converter.toDto(storeStatus))
-                .residentPopulation(converter.toDto(resident))
-                .spending(converter.toDto(spending))
-                .build();
-    }
 
     public List<CommercialAreaDto> getAreasInBoundingBox(Double minLat, Double maxLat, Double minLng, Double maxLng) {
         return areaRepository
@@ -84,7 +50,5 @@ public class CommercialAreaService {
                         .build())
                 .collect(Collectors.toList());
     }
-
-
 
 }

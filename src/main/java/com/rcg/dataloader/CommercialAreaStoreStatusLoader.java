@@ -48,6 +48,7 @@ public class CommercialAreaStoreStatusLoader implements CommandLineRunner {
 
                 CsvToBean<CommercialAreaStoreStatus> csvToBean = new CsvToBeanBuilder<CommercialAreaStoreStatus>(br)
                         .withType(CommercialAreaStoreStatus.class)
+                        .withSeparator(',')
                         .withIgnoreLeadingWhiteSpace(true)
                         .build();
 
