@@ -163,4 +163,28 @@ public class CityStatic {
 
   @Column(name = "loaded_at")
   private LocalDateTime loadedAt;
+
+  @Column(name = "road_addr")
+  private String roadAddr;
+
+  @Column(name = "address")
+  private String address;
+
+  @Column(name = "lat")
+  private String lat;
+
+  @Column(name = "lng")
+  private String lng;
+
+  @Column(name = "rsb_payment_lvl")
+  private String rsbPaymentLvl;
+
+  @Column(name = "rsb_sh_payment_cnt")
+  private String rsbShPaymentCnt;
+
+  @Column(name = "rsb_sh_payment_amt_min")
+  private String rsbShPaymentAmtMin;
+
+  @Column(name = "rsb_sh_payment_amt_max")
+  private String rsbShPaymentAmtMax;
 }

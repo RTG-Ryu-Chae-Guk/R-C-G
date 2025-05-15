@@ -62,6 +62,16 @@ public class CommercialAreaDetailController {
     ) {
         return ResponseEntity.ok(detailService.getStoreStatus(trdarCd, stdrYyquCd));
     }
+    @Operation(summary = "점포 순위 TOP 5", description = "점포 수가 많고 폐업률이 낮은 업종 상위 5개 조회")
+    @GetMapping("/{trdarCd}/top-store-categories")
+    public ResponseEntity<List<TopStoreCategoryDto>> getTop5StoreCategories(
+            @Parameter(name = "trdarCd", description = "상권 코드", example = "3001491")
+            @PathVariable String trdarCd,
+            @Parameter(name = "stdrYyquCd", description = "기준 년도-분기 코드", example = "20244")
+            @RequestParam(required = false) String stdrYyquCd
+    ) {
+        return ResponseEntity.ok(detailService.getTop5StoreCategories(trdarCd.trim(), stdrYyquCd));
+    }
 
     @Operation(summary = "상주인구 조회", description = "특정 분기의 상주 인구 데이터를 조회합니다.")
     @GetMapping("/{trdarCd}/residents")
@@ -83,5 +93,15 @@ public class CommercialAreaDetailController {
             @RequestParam(required = false) String stdrYyquCd
     ) {
         return ResponseEntity.ok(detailService.getSpending(trdarCd, stdrYyquCd));
+    }
+
+    @Operation(summary = "상권 통합 정보 조회", description = "trdarCd 하나만으로 최신 분기(기본 20244) 기준의 모든 데이터를 통합 조회합니다.")
+    @GetMapping("/{trdarCd}/summary")
+    public ResponseEntity<CommercialAreaDetailDto> getSummary(
+            @Parameter(name = "trdarCd", description = "상권 코드", example = "3001491")
+            @PathVariable String trdarCd
+    ) {
+        String defaultYyquCd = "20244"; // ✨ 기본 분기 하드코딩 or config로 처리 가능
+        return ResponseEntity.ok(detailService.getSummary(trdarCd.trim(), defaultYyquCd));
     }
 }

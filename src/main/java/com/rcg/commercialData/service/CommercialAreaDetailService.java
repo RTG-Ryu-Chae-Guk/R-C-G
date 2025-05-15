@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.Comparator;
 import java.util.List;
 
 @Slf4j
@@ -24,10 +25,12 @@ public class CommercialAreaDetailService {
     private final CommercialAreaDtoConverter converter;
 
     public CommercialAreaDto getArea(String trdarCd) {
+        trdarCd = trdarCd.trim(); // 공백 제거
         CommercialArea area = areaRepository.findByTrdarCd(trdarCd)
                 .orElseThrow(() -> new IllegalArgumentException("해당 상권 정보가 없습니다."));
         return converter.toDto(area);
     }
+
 
     public CommercialAreaFloatingPopulationDto getFloatingPopulation(String trdarCd, String stdrYyquCd) {
         log.info("🔍 [유동인구 조회 시작] trdarCd = {}, stdrYyquCd = {}", trdarCd, stdrYyquCd);
@@ -56,6 +59,24 @@ public class CommercialAreaDetailService {
         }
     }
 
+    public List<TopStoreCategoryDto> getTop5StoreCategories(String trdarCd, String stdrYyquCd) {
+        if (stdrYyquCd == null) {
+            stdrYyquCd = storeStatusRepository.findLatestYyquCdByTrdarCd(trdarCd)
+                    .orElseThrow(() -> new IllegalArgumentException("기준 분기 코드 없음"));
+        }
+
+        List<CommercialAreaStoreStatus> list = storeStatusRepository.findAllByTrdarCdAndStdrYyquCd(trdarCd, stdrYyquCd);
+
+        return list.stream()
+                .filter(s -> s.getStoreCo() != null && s.getCloseRt() != null)
+                .sorted(Comparator
+                        .comparing(CommercialAreaStoreStatus::getStoreCo, Comparator.reverseOrder())
+                        .thenComparing(CommercialAreaStoreStatus::getCloseRt))
+                .limit(5)
+                .map(s -> new TopStoreCategoryDto(s.getSvcIndutyCdNm(), s.getStoreCo(), s.getCloseRt()))
+                .toList();
+    }
+
     public List<CommercialAreaSalesDto> getSales(String trdarCd, String stdrYyquCd) {
         List<CommercialAreaSales> salesList = salesRepository.findAllByTrdarCdAndStdrYyquCd(trdarCd, stdrYyquCd);
         return converter.toSalesDtoList(salesList);
@@ -79,5 +100,16 @@ public class CommercialAreaDetailService {
                 .findByTrdarCdAndStdrYyquCd(trdarCd, stdrYyquCd)
                 .orElseThrow(() -> new IllegalArgumentException("소비 데이터가 없습니다."));
         return converter.toDto(spending);
+    }
+
+    public CommercialAreaDetailDto getSummary(String trdarCd, String stdrYyquCd) {
+        return CommercialAreaDetailDto.builder()
+                .area(getArea(trdarCd))
+                .floatingPopulation(getFloatingPopulation(trdarCd, stdrYyquCd))
+                .salesList(getSales(trdarCd, stdrYyquCd))
+                .storeStatusList(getStoreStatus(trdarCd, stdrYyquCd))
+                .residentPopulation(getResidentPopulation(trdarCd, stdrYyquCd))
+                .spending(getSpending(trdarCd, stdrYyquCd))
+                .build();
     }
 }

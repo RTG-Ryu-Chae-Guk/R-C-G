@@ -80,6 +80,14 @@ public class CityStaticService {
     dto.setCmrcl60Rate(String.valueOf(cs.getCmrcl60Rate()));
     dto.setCmrclPersonalRate(String.valueOf(cs.getCmrclPersonalRate()));
     dto.setCmrclCorporationRate(String.valueOf(cs.getCmrclCorporationRate()));
+    dto.setRoadAddr(cs.getRoadAddr());
+    dto.setAddress(cs.getAddress());
+    dto.setLat(cs.getLat());
+    dto.setLng(cs.getLng());
+    dto.setRsbPaymentLvl(cs.getRsbPaymentLvl());
+    dto.setRsbShPaymentCnt(cs.getRsbShPaymentCnt());
+    dto.setRsbShPaymentAmtMin(cs.getRsbShPaymentAmtMin());
+    dto.setRsbShPaymentAmtMax(cs.getRsbShPaymentAmtMax());
     return dto;
   }
 }

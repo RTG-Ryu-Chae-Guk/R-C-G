@@ -75,4 +75,14 @@ public class CityStaticDto {
   private String cmrcl60Rate;        // CMRCL_60_RATE        60대 이상 소비 비율
   private String cmrclPersonalRate;  // CMRCL_PERSONAL_RATE  개인 소비 비율
   private String cmrclCorporationRate; // CMRCL_CORPORATION_RATE 법인 소비 비율
+
+  private String roadAddr;
+  private String address;
+  private String lat;
+  private String lng;
+  private String rsbPaymentLvl;
+  private String rsbShPaymentCnt;
+  private String rsbShPaymentAmtMin;
+  private String rsbShPaymentAmtMax;
+
 }

@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import java.util.Optional;
-
+import java.util.List;
 public interface CommercialAreaFloatingPopulationRepository extends JpaRepository<  CommercialAreaFloatingPopulation, Long> {
     Optional<CommercialAreaFloatingPopulation> findByTrdarCdAndStdrYyquCd(String trdarCd, String stdrYyquCd);
 
@@ -15,4 +15,5 @@ public interface CommercialAreaFloatingPopulationRepository extends JpaRepositor
             "ORDER BY f.stdrYyquCd DESC")
     Optional<String> findLatestYyquCdByTrdarCd(@Param("trdarCd") String trdarCd); // 가장 최신 분기
 
+    List<CommercialAreaFloatingPopulation> findAllByStdrYyquCd(String stdrYyquCd);
 }
