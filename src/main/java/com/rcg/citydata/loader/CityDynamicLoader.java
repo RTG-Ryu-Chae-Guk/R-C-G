@@ -47,7 +47,25 @@ public class CityDynamicLoader implements CommandLineRunner {
           "RSB_SH_PAYMENT_AMT_MIN", "RSB_SH_PAYMENT_AMT_MAX", "RSB_MCT_CNT", "RSB_MCT_TIME",
           "CMRCL_MALE_RATE", "CMRCL_FEMALE_RATE", "CMRCL_10_RATE", "CMRCL_20_RATE",
           "CMRCL_30_RATE", "CMRCL_40_RATE", "CMRCL_50_RATE", "CMRCL_60_RATE",
-          "CMRCL_PERSONAL_RATE", "CMRCL_CORPORATION_RATE", "CMRCL_TIME"
+          "CMRCL_PERSONAL_RATE", "CMRCL_CORPORATION_RATE", "CMRCL_TIME",
+
+          // 주차장 필드
+          "PRK_STTS", "PRK_NM", "PRK_CD", "PRK_TYPE", "CPCTY",
+          "CUR_PRK_CNT", "CUR_PRK_TIME", "CUR_PRK_YN",
+          "PAY_YN", "RATES", "TIME_RATES", "ADD_RATES", "ADD_TIME_RATES",
+
+          // 도로 현황 필드
+          "ROAD_MSG",
+
+          // 도로 구간 필드
+          "START_ND_NM",     // 도로노드 시작명
+          "START_ND_XY",     // 도로노드 시작지점 좌표
+          "END_ND_CD",       // 도로노드 종료 지점 코드
+          "END_ND_NM",       // 도로노드 종료명
+          "END_ND_XY",       // 도로노드 종료지점 좌표
+          "DIST",            // 도로구간 길이
+          "SPD",             // 도로구간 평균속도
+          "IDX"              // 도로구간 소통지표
   );
 
   @Override

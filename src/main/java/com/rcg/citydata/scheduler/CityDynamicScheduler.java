@@ -1,10 +1,14 @@
 package com.rcg.citydata.scheduler;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.rcg.citydata.entity.CityDynamic;
 import com.rcg.citydata.entity.CityDynamicId;
 import com.rcg.citydata.repository.CityDynamicRepository;
+import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -12,13 +16,11 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.reactive.function.client.ExchangeStrategies;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import java.nio.file.Files;
-import java.nio.file.Path;
+import java.io.FileInputStream;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Set;
-import java.util.stream.Stream;
+import java.util.*;
 
 @Component
 @RequiredArgsConstructor
@@ -31,9 +33,6 @@ public class CityDynamicScheduler {
                   .codecs(configurer -> configurer.defaultCodecs().maxInMemorySize(100 * 1024 * 1024))
                   .build())
           .build();
-
-  @Value("${citydata.path}")
-  private String dataPath;
 
   @Value("${citydata.api-key}")
   private String apiKey;
@@ -53,45 +52,45 @@ public class CityDynamicScheduler {
           "RSB_SH_PAYMENT_AMT_MIN", "RSB_SH_PAYMENT_AMT_MAX", "RSB_MCT_CNT", "RSB_MCT_TIME",
           "CMRCL_MALE_RATE", "CMRCL_FEMALE_RATE", "CMRCL_10_RATE", "CMRCL_20_RATE",
           "CMRCL_30_RATE", "CMRCL_40_RATE", "CMRCL_50_RATE", "CMRCL_60_RATE",
-          "CMRCL_PERSONAL_RATE", "CMRCL_CORPORATION_RATE", "CMRCL_TIME"
+          "CMRCL_PERSONAL_RATE", "CMRCL_CORPORATION_RATE", "CMRCL_TIME",
+          "PRK_STTS", "PRK_NM", "PRK_CD", "PRK_TYPE", "CPCTY",
+          "CUR_PRK_CNT", "CUR_PRK_TIME", "CUR_PRK_YN",
+          "PAY_YN", "RATES", "TIME_RATES", "ADD_RATES", "ADD_TIME_RATES",
+          "ROAD_MSG"
   );
 
-  @Scheduled(cron = "0 57 * * * ?", zone = "Asia/Seoul")
+  private static final String EXCEL_PATH = "src/main/resources/data/Seoul_place.xlsx";
+
+  // 서버 실행시 자동 실행
+  @PostConstruct
+  public void onStartupLoadOnce() {
+    loadAndSaveDynamicData();
+  }
+
+  // 매 시각 정각 (00분 00초)에 실행
+  @Scheduled(cron = "0 0 * * * ?", zone = "Asia/Seoul")
   @Transactional
   public void loadAndSaveDynamicData() {
-    dynamicRepository.deleteAllInBatch();
+    String apiUrlTemplate = "http://openapi.seoul.go.kr:8088/{apiKey}/json/citydata/1/5/{areaName}";
 
-    String apiUrlTemplate = "http://openapi.seoul.go.kr:8088/{apiKey}/json/citydata/1/5/{regionCode}";
-    Path baseDir = Paths.get(dataPath);
+    // 시 단위로 timestamp 고정
+    LocalDateTime timestamp = LocalDateTime.now()
+            .withMinute(0).withSecond(0).withNano(0);
 
-    try (Stream<Path> folders = Files.list(baseDir).filter(Files::isDirectory)) {
-      folders.forEach(folder -> {
-        String folderName = folder.getFileName().toString();
-        String regionCode = folderName.contains("_") ? folderName.substring(0, folderName.indexOf('_')) : folderName;
+    try {
+      List<Map.Entry<String, String>> regionList = loadRegionList();
+
+      for (Map.Entry<String, String> region : regionList) {
+        String areaCd = region.getKey();
+        String areaNm = region.getValue();
 
         try {
-          // 삭제 기존 JSON
-          try (Stream<Path> oldFiles = Files.list(folder).filter(p -> p.toString().endsWith(".json"))) {
-            oldFiles.forEach(p -> {
-              try { Files.deleteIfExists(p); } catch (Exception ignore) {}
-            });
-          } catch (Exception ignore) {}
-
-          // API 호출
           String jsonResponse = webClient.get()
-                  .uri(apiUrlTemplate, apiKey, regionCode)
+                  .uri(apiUrlTemplate, apiKey, areaNm)
                   .retrieve()
                   .bodyToMono(String.class)
                   .block();
 
-          // 파일 저장
-          String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss"));
-          String filename = String.format("citydata_%s_%s.json", regionCode, timestamp);
-          Path filePath = folder.resolve(filename);
-          Files.createDirectories(folder);
-          Files.writeString(filePath, jsonResponse);
-
-          // JSON 파싱 및 저장
           ObjectNode rootNode = (ObjectNode) mapper.readTree(jsonResponse).path("CITYDATA");
           ObjectNode dynamicNode = mapper.createObjectNode();
           wantedFields.forEach(field -> {
@@ -100,23 +99,53 @@ public class CityDynamicScheduler {
             }
           });
 
-          CityDynamic cityDynamic = new CityDynamic();
           CityDynamicId id = new CityDynamicId(
                   rootNode.path("AREA_CD").asText(),
                   rootNode.path("AREA_NM").asText(),
-                  LocalDateTime.now()
+                  timestamp
           );
+
+          // 기존 데이터 삭제
+          dynamicRepository.deleteByIdAreaNm(id.getAreaNm());
+
+          
+          CityDynamic cityDynamic = new CityDynamic();
           cityDynamic.setId(id);
           cityDynamic.setDynamicData(dynamicNode.toString());
           dynamicRepository.save(cityDynamic);
 
-          System.out.println("\u2705 [" + folderName + "] 저장 완료: " + filePath);
-        } catch (Exception ex) {
-          System.err.println("\u274C [" + folderName + "] 처리 실패: " + ex.getMessage());
+          System.out.println("✅ 저장 완료: " + areaNm + " / " + timestamp.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")));
+        } catch (Exception e) {
+          System.err.println("❌ 실패: " + areaNm + " / 이유: " + e.getMessage());
         }
-      });
+      }
     } catch (Exception e) {
-      System.err.println("폴더 스캔 실패: " + e.getMessage());
+      System.err.println("전체 처리 실패: " + e.getMessage());
     }
   }
+
+  private List<Map.Entry<String, String>> loadRegionList() {
+    List<Map.Entry<String, String>> result = new ArrayList<>();
+    try (Workbook workbook = new XSSFWorkbook(new FileInputStream(Paths.get(EXCEL_PATH).toFile()))) {
+      Sheet sheet = workbook.getSheetAt(0);
+      boolean isFirst = true;
+
+      for (Row row : sheet) {
+        if (isFirst) {
+          isFirst = false;
+          continue; // header skip
+        }
+        Cell codeCell = row.getCell(2); // AREA_CD
+        Cell nameCell = row.getCell(3); // AREA_NM
+        if (codeCell != null && nameCell != null) {
+          result.add(Map.entry(codeCell.getStringCellValue(), nameCell.getStringCellValue()));
+        }
+      }
+    } catch (Exception e) {
+      System.err.println("엑셀 읽기 실패: " + e.getMessage());
+    }
+    return result;
+  }
 }
+
+

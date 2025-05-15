@@ -1,3 +1,4 @@
+/*
 package com.rcg.citydata.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -63,3 +64,4 @@ public class CityDynamicController {
     return ResponseEntity.ok(dto);
   }
 }
+*/
